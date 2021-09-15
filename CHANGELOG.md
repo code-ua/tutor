@@ -4,6 +4,8 @@ Note: Breaking changes between versions are indicated by "💥".
 
 ## Unreleased
 
+- 💥[Improvement] Change the `settheme` command such that, by default, a custom theme is assigned to the LMS and the CMS, both in production and development mode.
+
 ## v12.1.3 (2021-09-28)
 
 - [Bugfix] Fix 500 error during user registration.
