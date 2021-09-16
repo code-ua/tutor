@@ -24,10 +24,13 @@ chardet==4.0.0
     #   -r requirements/base.txt
     #   requests
 click==8.0.1
-    # via -r requirements/base.txt
+    # via
+    #   -r requirements/base.txt
+    #   sphinx-click
 docutils==0.16
     # via
     #   sphinx
+    #   sphinx-click
     #   sphinx-rtd-theme
 google-auth==1.32.1
     # via
@@ -111,7 +114,10 @@ snowballstemmer==2.1.0
 sphinx==4.0.2
     # via
     #   -r requirements/docs.in
+    #   sphinx-click
     #   sphinx-rtd-theme
+sphinx-click==3.0.1
+    # via -r requirements/docs.in
 sphinx-rtd-theme==0.5.2
     # via -r requirements/docs.in
 sphinxcontrib-applehelp==1.0.2
