@@ -4,6 +4,9 @@ Note: Breaking changes between versions are indicated by "💥".
 
 ## Unreleased
 
+- 💥[Improvement] Run all services as unprivileged containers, for better security. This has multiple consequences:
+  - The "openedx-dev" image is now built with `tutor dev dc build lms`.
+  - The "smtp" service now runs the "devture/exim-relay" Docker image, which is unprivileged. Also, the default SMTP port is now 8025.
 - [Feature] Add configuration setting `PREVIEW_LMS_BASE` for custom preview domain.
 
 ## v12.1.3 (2021-09-28)
