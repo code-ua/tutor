@@ -12,9 +12,9 @@ The ``config`` attribute is used to modify existing and add new configuration pa
 
 * ``config["add"]`` are key/values that should be added to the user-specific ``config.yml`` configuration. Add there passwords, secret keys and other values that do not have a default value.
 * ``config["defaults"]`` are default key/values for this plugin. These values will not be added to the ``config.yml`` user file unless users override them manually with ``tutor config save --set ...``.
-* ``config["set"]`` are existing key/values that should be modified. Be very careful what you add there! Plugins may define conflicting values for some parameters.
+* ``config["set"]`` are existing key/values that should be modified. Be very careful what you add there! Different plugins may define conflicting values for some parameters.
 
- "set" and "default" key names will be automatically prefixed with the plugin name, in upper case.
+ "add" and "defaults" key names will be automatically prefixed with the plugin name, in upper case.
 
 Example::
 
@@ -176,7 +176,7 @@ When saving the environment, template files that are stored in a template root w
 command
 ~~~~~~~
 
-A plugin can provide custom command line commands. Commands are assumed to be `click.Command <https://click.palletsprojects.com/en/8.x/api/#commands>`__ objects.
+A plugin can provide custom command line commands. Commands are assumed to be `click.Command <https://click.palletsprojects.com/en/8.0.x/api/#commands>`__ objects.
 
 Example::
 
@@ -191,7 +191,7 @@ Any user who installs the ``myplugin`` plugin can then run::
     $ tutor myplugin
     Hello from myplugin!
 
-You can even define subcommands by creating `command groups <https://click.palletsprojects.com/en/8.x/api/#click.Group>`__::
+You can even define subcommands by creating `command groups <https://click.palletsprojects.com/en/8.0.x/api/#click.Group>`__::
 
     import click
 
@@ -208,4 +208,4 @@ This would allow any user to run::
     $ tutor myplugin dosomething
     This subcommand is awesome
 
-See the official `click documentation <https://click.palletsprojects.com/en/8.x/>`__ for more information.
+See the official `click documentation <https://click.palletsprojects.com/en/8.0.x/>`__ for more information.
