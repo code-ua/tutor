@@ -168,7 +168,7 @@ def upgrade_from_juniper(context: click.Context, config: Config) -> None:
             "bash",
             "-e",
             "-c",
-            "mysql_upgrade -u {} --password='{}'".format(
+            "\"mysql_upgrade -u {} --password='{}'\"".format(
                 config["MYSQL_ROOT_USERNAME"], config["MYSQL_ROOT_PASSWORD"]
             ),
         ],
