@@ -160,20 +160,20 @@ def upgrade_from_juniper(context: click.Context, config: Config) -> None:
         return
 
     click.echo(fmt.title("Upgrading MySQL from v5.6 to v5.7"))
-    context.invoke(compose.start, detach=True, services=["mysql"])
-    context.invoke(
-        compose.execute,
-        args=[
-            "mysql",
-            "bash",
-            "-e",
-            "-c",
-            "\"mysql_upgrade -u {} --password='{}'\"".format(
-                config["MYSQL_ROOT_USERNAME"], config["MYSQL_ROOT_PASSWORD"]
-            ),
-        ],
-    )
-    context.invoke(compose.stop)
+#     context.invoke(compose.start, detach=True, services=["mysql"])
+#     context.invoke(
+#         compose.execute,
+#         args=[
+#             "mysql",
+#             "bash",
+#             "-e",
+#             "-c",
+#             "mysql_upgrade -u {} --password='{}'".format(
+#                 config["MYSQL_ROOT_USERNAME"], config["MYSQL_ROOT_PASSWORD"]
+#             ),
+#         ],
+#     )
+#     context.invoke(compose.stop)
 
 
 def upgrade_from_koa(context: click.Context, config: Config) -> None:
